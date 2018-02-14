@@ -26,10 +26,8 @@ include_directories(../libasn1parser)
 add_library(asn1fix ${ASN1FIX_SOURCES})
 
 add_executable(check_fixer check_fixer.c)
-add_dependencies(check_fixer asn1fix asn1parser)
-target_link_libraries(check_fixer asn1fix asn1parser)
+target_link_libraries(check_fixer asn1fix asn1parser asn1common)
 
 add_executable(check_crange asn1fix_crange.c asn1fix_constraint_compat.c)
-add_dependencies(check_crange asn1fix asn1parser)
 target_compile_definitions(check_crange PRIVATE -DUNIT_TEST)
-target_link_libraries(check_crange asn1fix asn1parser)
+target_link_libraries(check_crange asn1fix asn1parser asn1common)
