@@ -43,6 +43,8 @@ ADD_DEFINITIONS(-DHAVE_CONFIG_H=1)
 ADD_DEFINITIONS(-DDATADIR="${CMAKE_CURRENT_SOURCE_DIR}/skeletons")
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+SET (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99")
+
 include_directories(skeletons)
 include_directories(libasn1common)
 include_directories(libasn1print)
